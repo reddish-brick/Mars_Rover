@@ -26,14 +26,4 @@ public class Mars {
   public Mars executeCommand(Command command) {
     return command.execute(this);
   }
-
-  public Mars turn(TURN turn) {
-    if (turn.equals(TURN.LEFT)) {
-      this.setDirection(TURN.LEFT.operation(this.direction));
-    }
-    if (turn.equals(TURN.RIGHT)) {
-      this.setDirection(TURN.RIGHT.operation(this.direction));
-    }
-    return this;
-  }
 }
