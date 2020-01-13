@@ -9,38 +9,31 @@ public enum TURN implements TurnOperation {
   LEFT {
     @Override
     public DIRECTION operation(DIRECTION direction) {
-      if (direction.equals(NORTH)) {
-        return WEST;
-      }
-      if (direction.equals(SOUTH)) {
-        return EAST;
-      }
-      if (direction.equals(EAST)) {
-        return NORTH;
-      }
-      if (direction.equals(WEST)) {
-        return SOUTH;
-      }
-      return direction;
+      return getDirection(direction, WEST, EAST, NORTH, SOUTH);
     }
   },
   RIGHT {
     @Override
     public DIRECTION operation(DIRECTION direction) {
-      if (direction.equals(NORTH)) {
-        return EAST;
-      }
-      if (direction.equals(SOUTH)) {
-        return WEST;
-      }
-      if (direction.equals(EAST)) {
-        return SOUTH;
-      }
-      if (direction.equals(WEST)) {
-        return NORTH;
-      }
-      return direction;
+      return getDirection(direction, EAST, WEST, SOUTH, NORTH);
     }
+  };
+
+  private static DIRECTION getDirection(DIRECTION direction, DIRECTION west, DIRECTION east,
+      DIRECTION north, DIRECTION south) {
+    if (direction.equals(NORTH)) {
+      return west;
+    }
+    if (direction.equals(SOUTH)) {
+      return east;
+    }
+    if (direction.equals(EAST)) {
+      return north;
+    }
+    if (direction.equals(WEST)) {
+      return south;
+    }
+    return direction;
   }
 
 }
