@@ -19,6 +19,10 @@ public class Mars {
     return direction;
   }
 
+  public void setDirection(Direction direction) {
+    this.direction = direction;
+  }
+
   public Mars move() {
     if (this.getDirection().equals(Direction.NORTH)) {
       this.getLocation().setY(this.getLocation().getY() + 1);
@@ -31,6 +35,13 @@ public class Mars {
     }
     if (this.getDirection().equals(Direction.EAST)) {
       this.getLocation().setX(this.getLocation().getX() - 1);
+    }
+    return this;
+  }
+
+  public Mars turn(TURN turn) {
+    if (turn.equals(TURN.LEFT)) {
+      this.setDirection(Direction.WEST);
     }
     return this;
   }
