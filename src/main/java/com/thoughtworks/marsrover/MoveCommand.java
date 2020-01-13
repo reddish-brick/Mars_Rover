@@ -3,8 +3,8 @@ package com.thoughtworks.marsrover;
 public class MoveCommand implements Command {
 
   @Override
-  public Mars execute(Mars mars) {
-    mars.getLocation().move();
-    return mars;
+  public Location execute(Location location) {
+    location.move();
+    return location;
   }
 }
