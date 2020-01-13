@@ -41,7 +41,12 @@ public class Mars {
 
   public Mars turn(TURN turn) {
     if (turn.equals(TURN.LEFT)) {
-      this.setDirection(Direction.WEST);
+      if (this.getDirection().equals(Direction.NORTH)) {
+        this.setDirection(Direction.WEST);
+      }
+      if (this.getDirection().equals(Direction.SOUTH)) {
+        this.setDirection(Direction.EAST);
+      }
     }
     return this;
   }
