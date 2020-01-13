@@ -169,4 +169,15 @@ public class MarsTest {
     assertEquals(9, mars.getLocation().getX().intValue());
     assertEquals(10, mars.getLocation().getY().intValue());
   }
+
+  @Test
+  public void should_return_direction_S_location_x_10_y_9_when_turn_right_and_move_given_direction_E_location_x_10_y_10() {
+    Mars mars = new Mars(new Location(10, 10), Direction.EAST);
+
+    mars.executeCommand(asList(new TurnRightCommand(), new MoveCommand()));
+
+    assertEquals(Direction.SOUTH, mars.getDirection());
+    assertEquals(10, mars.getLocation().getX().intValue());
+    assertEquals(9, mars.getLocation().getY().intValue());
+  }
 }
