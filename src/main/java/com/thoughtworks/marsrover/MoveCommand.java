@@ -9,17 +9,18 @@ public class MoveCommand implements Command {
 
   @Override
   public Mars execute(Mars mars) {
+    final Location location = mars.getLocation();
     if (mars.getDirection().equals(NORTH)) {
-      mars.getLocation().setY(mars.getLocation().getY() + 1);
+      location.setY(location.getY() + 1);
     }
     if (mars.getDirection().equals(SOUTH)) {
-      mars.getLocation().setY(mars.getLocation().getY() - 1);
+      location.setY(location.getY() - 1);
     }
     if (mars.getDirection().equals(WEST)) {
-      mars.getLocation().setX(mars.getLocation().getX() - 1);
+      location.setX(location.getX() - 1);
     }
     if (mars.getDirection().equals(EAST)) {
-      mars.getLocation().setX(mars.getLocation().getX() + 1);
+      location.setX(location.getX() + 1);
     }
     return mars;
   }
