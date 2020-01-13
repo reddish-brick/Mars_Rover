@@ -23,20 +23,8 @@ public class Mars {
     this.direction = direction;
   }
 
-  public Mars move() {
-    if (this.getDirection().equals(Direction.NORTH)) {
-      this.getLocation().setY(this.getLocation().getY() + 1);
-    }
-    if (this.getDirection().equals(Direction.SOUTH)) {
-      this.getLocation().setY(this.getLocation().getY() - 1);
-    }
-    if (this.getDirection().equals(Direction.WEST)) {
-      this.getLocation().setX(this.getLocation().getX() + 1);
-    }
-    if (this.getDirection().equals(Direction.EAST)) {
-      this.getLocation().setX(this.getLocation().getX() - 1);
-    }
-    return this;
+  public Mars executeCommand(Command command) {
+    return command.execute(this);
   }
 
   public Mars turn(TURN turn) {
