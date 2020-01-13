@@ -1,14 +1,14 @@
 package com.thoughtworks.marsrover;
 
-import static com.thoughtworks.marsrover.Direction.EAST;
-import static com.thoughtworks.marsrover.Direction.NORTH;
-import static com.thoughtworks.marsrover.Direction.SOUTH;
-import static com.thoughtworks.marsrover.Direction.WEST;
+import static com.thoughtworks.marsrover.DIRECTION.EAST;
+import static com.thoughtworks.marsrover.DIRECTION.NORTH;
+import static com.thoughtworks.marsrover.DIRECTION.SOUTH;
+import static com.thoughtworks.marsrover.DIRECTION.WEST;
 
 public enum TURN implements TurnOperation {
   LEFT {
     @Override
-    public Direction operation(Direction direction) {
+    public DIRECTION operation(DIRECTION direction) {
       if (direction.equals(NORTH)) {
         return WEST;
       }
@@ -26,7 +26,7 @@ public enum TURN implements TurnOperation {
   },
   RIGHT {
     @Override
-    public Direction operation(Direction direction) {
+    public DIRECTION operation(DIRECTION direction) {
       if (direction.equals(NORTH)) {
         return EAST;
       }

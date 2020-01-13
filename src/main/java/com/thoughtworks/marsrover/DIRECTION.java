@@ -1,6 +1,6 @@
 package com.thoughtworks.marsrover;
 
-public enum Direction {
+public enum DIRECTION {
   NORTH,
   SOUTH,
   WEST,

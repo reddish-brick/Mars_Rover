@@ -6,9 +6,9 @@ import java.util.List;
 public class Mars {
 
   private Location location;
-  private Direction direction;
+  private DIRECTION direction;
 
-  public Mars(Location location, Direction direction) {
+  public Mars(Location location, DIRECTION direction) {
     this.location = location;
     this.direction = direction;
   }
@@ -17,11 +17,11 @@ public class Mars {
     return location;
   }
 
-  public Direction getDirection() {
+  public DIRECTION getDirection() {
     return direction;
   }
 
-  public void setDirection(Direction direction) {
+  public void setDirection(DIRECTION direction) {
     this.direction = direction;
   }
 

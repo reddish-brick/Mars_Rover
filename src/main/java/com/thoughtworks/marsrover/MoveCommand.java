@@ -1,9 +1,9 @@
 package com.thoughtworks.marsrover;
 
-import static com.thoughtworks.marsrover.Direction.EAST;
-import static com.thoughtworks.marsrover.Direction.NORTH;
-import static com.thoughtworks.marsrover.Direction.SOUTH;
-import static com.thoughtworks.marsrover.Direction.WEST;
+import static com.thoughtworks.marsrover.DIRECTION.EAST;
+import static com.thoughtworks.marsrover.DIRECTION.NORTH;
+import static com.thoughtworks.marsrover.DIRECTION.SOUTH;
+import static com.thoughtworks.marsrover.DIRECTION.WEST;
 
 public class MoveCommand implements Command {
 
