@@ -58,6 +58,24 @@ public class Mars {
         return this;
       }
     }
+    if (turn.equals(TURN.RIGHT)) {
+      if (this.getDirection().equals(Direction.NORTH)) {
+        this.setDirection(Direction.WEST);
+        return this;
+      }
+      if (this.getDirection().equals(Direction.SOUTH)) {
+        this.setDirection(Direction.EAST);
+        return this;
+      }
+      if (this.getDirection().equals(Direction.EAST)) {
+        this.setDirection(Direction.NORTH);
+        return this;
+      }
+      if (this.getDirection().equals(Direction.WEST)) {
+        this.setDirection(Direction.SOUTH);
+        return this;
+      }
+    }
     return this;
   }
 }
