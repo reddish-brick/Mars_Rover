@@ -41,40 +41,10 @@ public class Mars {
 
   public Mars turn(TURN turn) {
     if (turn.equals(TURN.LEFT)) {
-      if (this.getDirection().equals(Direction.NORTH)) {
-        this.setDirection(Direction.WEST);
-        return this;
-      }
-      if (this.getDirection().equals(Direction.SOUTH)) {
-        this.setDirection(Direction.EAST);
-        return this;
-      }
-      if (this.getDirection().equals(Direction.EAST)) {
-        this.setDirection(Direction.NORTH);
-        return this;
-      }
-      if (this.getDirection().equals(Direction.WEST)) {
-        this.setDirection(Direction.SOUTH);
-        return this;
-      }
+      this.setDirection(TURN.LEFT.operation(this.direction));
     }
     if (turn.equals(TURN.RIGHT)) {
-      if (this.getDirection().equals(Direction.NORTH)) {
-        this.setDirection(Direction.WEST);
-        return this;
-      }
-      if (this.getDirection().equals(Direction.SOUTH)) {
-        this.setDirection(Direction.EAST);
-        return this;
-      }
-      if (this.getDirection().equals(Direction.EAST)) {
-        this.setDirection(Direction.NORTH);
-        return this;
-      }
-      if (this.getDirection().equals(Direction.WEST)) {
-        this.setDirection(Direction.SOUTH);
-        return this;
-      }
+      this.setDirection(TURN.RIGHT.operation(this.direction));
     }
     return this;
   }
