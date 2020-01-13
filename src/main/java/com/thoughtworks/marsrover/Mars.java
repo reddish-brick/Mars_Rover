@@ -18,4 +18,9 @@ public class Mars {
   public Direction getDirection() {
     return direction;
   }
+
+  public Mars move() {
+    this.getLocation().setY(this.getLocation().getY() + 1);
+    return this;
+  }
 }
