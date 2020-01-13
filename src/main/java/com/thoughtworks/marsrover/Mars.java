@@ -53,6 +53,10 @@ public class Mars {
         this.setDirection(Direction.NORTH);
         return this;
       }
+      if (this.getDirection().equals(Direction.WEST)) {
+        this.setDirection(Direction.SOUTH);
+        return this;
+      }
     }
     return this;
   }
