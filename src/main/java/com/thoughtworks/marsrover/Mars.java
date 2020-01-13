@@ -26,6 +26,9 @@ public class Mars {
     if (this.getDirection().equals(Direction.SOUTH)) {
       this.getLocation().setY(this.getLocation().getY() - 1);
     }
+    if (this.getDirection().equals(Direction.WEST)) {
+      this.getLocation().setX(this.getLocation().getX() + 1);
+    }
     return this;
   }
 }
