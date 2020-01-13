@@ -9,11 +9,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Mars {
+public class MarsRover {
 
   private Location location;
 
-  public Mars executeCommand(List<Command> commands) {
+  public MarsRover executeCommand(List<Command> commands) {
     commands.stream()
         .forEach(command -> command.execute(this.getLocation()));
     return this;
