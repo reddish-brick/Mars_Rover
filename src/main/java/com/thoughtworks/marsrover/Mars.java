@@ -1,6 +1,8 @@
 package com.thoughtworks.marsrover;
 
 
+import java.util.List;
+
 public class Mars {
 
   private Location location;
@@ -23,7 +25,9 @@ public class Mars {
     this.direction = direction;
   }
 
-  public Mars executeCommand(Command command) {
-    return command.execute(this);
+  public Mars executeCommand(List<Command> commands) {
+    commands.stream()
+        .forEach(command -> command.execute(this));
+    return this;
   }
 }
