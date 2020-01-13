@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Mars {
 
   private Location location;
-  private DIRECTION direction;
+//  private DIRECTION direction;
 
   public Mars executeCommand(List<Command> commands) {
     commands.stream()

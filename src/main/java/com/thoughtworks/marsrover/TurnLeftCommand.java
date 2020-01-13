@@ -4,7 +4,7 @@ public class TurnLeftCommand implements Command {
 
   @Override
   public Mars execute(Mars mars) {
-    mars.setDirection(TURN.LEFT.operation(mars.getDirection()));
+    mars.getLocation().setDirection(TURN.LEFT.operation(mars.getLocation().getDirection()));
     return mars;
   }
 }
