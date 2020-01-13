@@ -28,16 +28,16 @@ public enum TURN implements TurnOperation {
     @Override
     public Direction operation(Direction direction) {
       if (direction.equals(Direction.NORTH)) {
-        return WEST;
-      }
-      if (direction.equals(Direction.SOUTH)) {
         return EAST;
       }
+      if (direction.equals(Direction.SOUTH)) {
+        return WEST;
+      }
       if (direction.equals(Direction.EAST)) {
-        return NORTH;
+        return SOUTH;
       }
       if (direction.equals(Direction.WEST)) {
-        return SOUTH;
+        return NORTH;
       }
       return direction;
     }
