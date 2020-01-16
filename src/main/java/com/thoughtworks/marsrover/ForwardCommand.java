@@ -1,10 +1,9 @@
 package com.thoughtworks.marsrover;
 
-public class MoveCommand implements Command {
+public class ForwardCommand implements Command {
 
   @Override
   public Location execute(Location location) {
-    location.move();
-    return location;
+   return location.forward();
   }
 }

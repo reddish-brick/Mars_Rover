@@ -20,7 +20,7 @@ public class MarsRoverTest {
   public void should_return_direction_N_location_x_10_y_11_when_move_given_direction_N_location_x_10_y_10() {
     MarsRover marsRover = new MarsRover(new Location(10, 10, DIRECTION.NORTH));
 
-    marsRover.executeCommand(asList(new MoveCommand()));
+    marsRover.executeCommand(asList(new ForwardCommand()));
 
     assertEquals(DIRECTION.NORTH, marsRover.getLocation().getDirection());
     assertEquals(10, marsRover.getLocation().getX().intValue());
@@ -31,7 +31,7 @@ public class MarsRoverTest {
   public void should_return_direction_S_location_x_10_y_9_when_move_given_direction_S_location_x_10_y_10() {
     MarsRover marsRover = new MarsRover(new Location(10, 10, DIRECTION.SOUTH));
 
-    marsRover.executeCommand(asList(new MoveCommand()));
+    marsRover.executeCommand(asList(new ForwardCommand()));
 
     assertEquals(DIRECTION.SOUTH, marsRover.getLocation().getDirection());
     assertEquals(10, marsRover.getLocation().getX().intValue());
@@ -42,7 +42,7 @@ public class MarsRoverTest {
   public void should_return_direction_E_location_x_11_y_10_when_move_given_direction_E_location_x_10_y_10() {
     MarsRover marsRover = new MarsRover(new Location(10, 10, DIRECTION.WEST));
 
-    marsRover.executeCommand(asList(new MoveCommand()));
+    marsRover.executeCommand(asList(new ForwardCommand()));
 
     assertEquals(DIRECTION.WEST, marsRover.getLocation().getDirection());
     assertEquals(9, marsRover.getLocation().getX().intValue());
@@ -53,7 +53,7 @@ public class MarsRoverTest {
   public void should_return_direction_W_location_x_9_y_10_when_move_given_direction_W_location_x_10_y_10() {
     MarsRover marsRover = new MarsRover(new Location(10, 10, DIRECTION.EAST));
 
-    marsRover.executeCommand(asList(new MoveCommand()));
+    marsRover.executeCommand(asList(new ForwardCommand()));
 
     assertEquals(DIRECTION.EAST, marsRover.getLocation().getDirection());
     assertEquals(11, marsRover.getLocation().getX().intValue());
@@ -152,7 +152,7 @@ public class MarsRoverTest {
   public void should_return_direction_W_location_x_9_y_10_when_turn_left_and_move_given_direction_N_location_x_10_y_10() {
     MarsRover marsRover = new MarsRover(new Location(10, 10, DIRECTION.NORTH));
 
-    marsRover.executeCommand(asList(new TurnLeftCommand(), new MoveCommand()));
+    marsRover.executeCommand(asList(new TurnLeftCommand(), new ForwardCommand()));
 
     assertEquals(DIRECTION.WEST, marsRover.getLocation().getDirection());
     assertEquals(9, marsRover.getLocation().getX().intValue());
@@ -163,7 +163,7 @@ public class MarsRoverTest {
   public void should_return_direction_W_location_x_9_y_10_when_turn_right_and_move_given_direction_S_location_x_10_y_10() {
     MarsRover marsRover = new MarsRover(new Location(10, 10, DIRECTION.SOUTH));
 
-    marsRover.executeCommand(asList(new TurnRightCommand(), new MoveCommand()));
+    marsRover.executeCommand(asList(new TurnRightCommand(), new ForwardCommand()));
 
     assertEquals(DIRECTION.WEST, marsRover.getLocation().getDirection());
     assertEquals(9, marsRover.getLocation().getX().intValue());
@@ -174,7 +174,7 @@ public class MarsRoverTest {
   public void should_return_direction_S_location_x_10_y_9_when_turn_right_and_move_given_direction_E_location_x_10_y_10() {
     MarsRover marsRover = new MarsRover(new Location(10, 10, DIRECTION.EAST));
 
-    marsRover.executeCommand(asList(new TurnRightCommand(), new MoveCommand()));
+    marsRover.executeCommand(asList(new TurnRightCommand(), new ForwardCommand()));
 
     assertEquals(DIRECTION.SOUTH, marsRover.getLocation().getDirection());
     assertEquals(10, marsRover.getLocation().getX().intValue());
@@ -185,7 +185,7 @@ public class MarsRoverTest {
   public void should_return_direction_S_location_x_10_y_9_when_turn_left_and_move_given_direction_W_location_x_10_y_10() {
     MarsRover marsRover = new MarsRover(new Location(10, 10, DIRECTION.WEST));
 
-    marsRover.executeCommand(asList(new TurnLeftCommand(), new MoveCommand()));
+    marsRover.executeCommand(asList(new TurnLeftCommand(), new ForwardCommand()));
 
     assertEquals(DIRECTION.SOUTH, marsRover.getLocation().getDirection());
     assertEquals(10, marsRover.getLocation().getX().intValue());

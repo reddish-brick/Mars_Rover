@@ -15,7 +15,7 @@ public class MarsRover {
 
   public MarsRover executeCommand(List<Command> commands) {
     commands.stream()
-        .forEach(command -> command.execute(this.getLocation()));
+        .forEach(command -> this.setLocation(command.execute(this.getLocation())));
     return this;
   }
 }
