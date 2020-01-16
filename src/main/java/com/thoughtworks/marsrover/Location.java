@@ -24,12 +24,21 @@ public class Location {
   private DIRECTION direction;
 
   public Location forward() {
-    Map<DIRECTION, Function<Location, Location>> map = new HashMap<>();
-    map.put(NORTH, plusY);
-    map.put(SOUTH, minusY);
-    map.put(WEST, minusX);
-    map.put(EAST, plusX);
-    return map.get(this.getDirection()).apply(this);
+    Map<DIRECTION, Function<Location, Location>> forwardMap = new HashMap<>();
+    forwardMap.put(NORTH, plusY);
+    forwardMap.put(SOUTH, minusY);
+    forwardMap.put(WEST, minusX);
+    forwardMap.put(EAST, plusX);
+    return forwardMap.get(this.getDirection()).apply(this);
+  }
+
+  public Location back() {
+    Map<DIRECTION, Function<Location, Location>> backMap = new HashMap<>();
+    backMap.put(NORTH, minusY);
+    backMap.put(SOUTH, plusY);
+    backMap.put(WEST, plusX);
+    backMap.put(EAST, minusX);
+    return backMap.get(this.getDirection()).apply(this);
   }
 
   final Function<Location, Location> plusY = location -> Location.builder()
