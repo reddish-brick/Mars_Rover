@@ -23,6 +23,15 @@ public class Location {
   private Integer y;
   private DIRECTION direction;
 
+  public Location forward() {
+    Map<DIRECTION, Function<Location, Location>> map = new HashMap<>();
+    map.put(NORTH, plusY);
+    map.put(SOUTH, minusY);
+    map.put(WEST, minusX);
+    map.put(EAST, plusX);
+    return map.get(this.getDirection()).apply(this);
+  }
+
   final Function<Location, Location> plusY = location -> Location.builder()
       .x(location.getX())
       .y(location.getY() + 1).direction(location.getDirection()).build();
@@ -35,13 +44,4 @@ public class Location {
   final Function<Location, Location> plusX = location -> Location.builder()
       .x(location.getX() + 1)
       .y(location.getY()).direction(location.getDirection()).build();
-
-  public Location forward() {
-    Map<DIRECTION, Function<Location, Location>> map = new HashMap<>();
-    map.put(NORTH, plusY);
-    map.put(SOUTH, minusY);
-    map.put(WEST, minusX);
-    map.put(EAST, plusX);
-    return map.get(this.getDirection()).apply(this);
-  }
 }
