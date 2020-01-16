@@ -23,6 +23,16 @@ public class Location {
   private Integer y;
   private DIRECTION direction;
 
+  public Location turnLeft() {
+    this.setDirection(TURN.LEFT.turn(this.getDirection()));
+    return this;
+  }
+
+  public Location turnRight() {
+    this.setDirection(TURN.RIGHT.turn(this.getDirection()));
+    return this;
+  }
+
   public Location forward() {
     Map<DIRECTION, Function<Location, Location>> forwardMap = new HashMap<>();
     forwardMap.put(NORTH, plusY);
